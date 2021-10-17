@@ -1,0 +1,13 @@
+
+从服务器下载repository（存储库）:
+  git clone <所以复制的网址>
+例 
+  git clone https://github.com/binglsea/readme
+
+
+建立枝
+  git branch <branch_name>
+
+
+上传
+  git push
