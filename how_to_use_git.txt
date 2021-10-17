@@ -11,3 +11,9 @@
 
 上传
   git push
+
+
+git status
+
+git add .
+git commit -m "notes"
