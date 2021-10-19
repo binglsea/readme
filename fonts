@@ -1,0 +1,57 @@
+Standard CJK fonts for LaTeX?
+
+Solution:
+
+You have many choices since you're already using XeLaTeX. :) There's a nice compilation of List of CJK fonts on Wikipedia. FOSS fonts are labelled as such in this list.
+
+As for "a single font that covers essentially all of the CJK code points, rare as well as common", choices are more limited there.
+
+[Updated; it's 2020 now!] AFAIK there is no single .TTF or .OTF that does that (I guess the file size would be too big). You may want to go for Noto Serif CJK SC, Noto Serif CJK TC, Noto Sans CJK SC, Noto Sans CJK TC. (They are also known as Source Hans Serif/Sans, 思源宋体/黑体)
+
+There are also font projects that distribute two separate font files, which together will cover the entire CJK codepoint range. Two open-source fonts that do that, that I'm aware of, are:
+
+Han Nom (You will want hannomH.zip)
+Hanazono
+Then using a recent version of XeCJK (as outlined in this answer to your earlier question) (example below uses Han Nom):
+
+\documentclass{article}
+
+\usepackage[fallback]{xeCJK}
+\setCJKmainfont{HAN NOM A}
+\setCJKfallbackfamilyfont{rm}{HAN NOM B}
+% NOTE: "rm" for \setCJKmainfont, "sf" for \setCJKsansfont, "tt" for  \setCJKmonofont
+%       and others for \setCJKfamilyfont.
+
+\begin{document}
+漢字源
+\end{document}
+
+As @LeoLiu stated, the kanjis in Hanazono look very 'japanified'. Han Nom looks much better for Chinese text hanzi (to my eyes anyway). Nevertheless, you didn't mention if you're working on Chinese text specifically: you just said "CJK". In any case, both Hanazono and Han Nom contain glyphs for hiragana and katakana, but unfortunately not hangul.
+
+
+No, there are very few free (either freedom or free of charge) Chinese fonts available.
+
+The Japanese fonts, like Hanazono (花園) fonts, are not suitable for serious Chinese document, since some of the glyphs do not meet the standard of (both simplified and traditional) Chinese.
+The simplified Chinese Linux community today often use these fonts:
+
+Several fonts freely contributed by Arphic Technology:
+
+AR PL SungtiL GB (文鼎 PL 简报宋)
+AR PL KaitiM GB (文鼎 PL 中楷)
+AR PLBaosong2GBK Light (文鼎 PL 报宋二 GBK)
+these fonts are free, and have been converted to PostScript Type1 format and contributed as part of the cjk-fonts package on CTAN.
+
+Several fonts contributed by Wen Quanyi (文泉驿) project:
+
+WenQuanYi Zen Hei (文泉驿正黑)
+WenQuanYi Micro Hei (文泉驿微米黑)
+However, these fonts are too few and still not good enough for publishing. Some Linux users have to use commercial fonts from Mac OS X (常州华文 fonts) and Windows (中易中标 fonts, Founder Type fonts etc.), or other commercial fonts from Adobe, Monotype, etc.
+
+The most common used Chinese TeX distribution is CTeX suite on Windows, so ctex package and zhmetrics configured some Windows fonts. These commercial fonts by 中易中标 are actualy widely used:
+
+SimSun (宋体)
+SimHei (黑体)
+KaiTi (楷体, GB18030 charset) or KaiTi_GB2312 (GB2312 charset)
+FangSong (仿宋, GB18030 charset) or FangSong_GB2312 (GB2312 charset)
+YouYuan (幼圆)
+LiSu (隶书)
