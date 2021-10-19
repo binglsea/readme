@@ -55,3 +55,26 @@ KaiTi (楷体, GB18030 charset) or KaiTi_GB2312 (GB2312 charset)
 FangSong (仿宋, GB18030 charset) or FangSong_GB2312 (GB2312 charset)
 YouYuan (幼圆)
 LiSu (隶书)
+
+
+
+% !TeX encoding = UTF-8
+% !TeX program = xelatex
+\documentclass{article}
+\usepackage{xeCJK}
+\newCJKfontfamily\kaishu{FandolKai-Regular.otf}
+\newCJKfontfamily\bkai{BKAI00MP.TTF}
+\begin{document}
+\kaishu 楷书 (FandolKai-Regular)
+
+\bkai 楷書 (AR PL KaitiM Big5)
+\end{document}
+
+
+\documentclass{article}
+\usepackage{xeCJK}
+\begin{document}
+\CJKfontspec{STXingkai} 华文行楷 (STXingkai)
+
+\CJKfontspec{FZShuTi} 方正舒体 (FZShuTi)
+\end{document}
