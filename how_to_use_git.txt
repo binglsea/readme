@@ -1,3 +1,7 @@
+https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
+https://www.texstudio.org/
+
 
 从服务器下载repository（存储库）:
   git clone <所以复制的网址>
