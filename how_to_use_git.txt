@@ -2,6 +2,8 @@ https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 https://www.texstudio.org/
 
+http://www.ctex.org/HomePage
+
 
 从服务器下载repository（存储库）:
   git clone <所以复制的网址>
